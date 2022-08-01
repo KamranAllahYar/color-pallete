@@ -19,11 +19,10 @@
             <div class="container-full">
                 <div>
                     <form id="get-color-scheme" class="d-flex align-items-center justify-content-between">
-                        <input type="color" v-model="colorInput">
-                        <select id="colorSchemes" v-model="colorSchemeType">
+                        <input type="color" v-model="colorInput" @change="getColorScheme">
+                        <select id="colorSchemes" v-model="colorSchemeType" @change="getColorScheme">
                             <option v-for="colorScheme in colorSchemes" :value="colorScheme.value">{{colorScheme.label}}</option>
                         </select>
-                        <button @click="getColorScheme" type="button">Get color scheme</button>
                     </form>
                 </div>
             </div>
